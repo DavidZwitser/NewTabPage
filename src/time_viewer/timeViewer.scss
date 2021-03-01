@@ -1,0 +1,20 @@
+#timeViewer-container
+{
+    display: flex;
+    position: absolute;
+
+    color: rgb(58, 58, 58);
+    // font-family: 'Montserrat', sans-serif;
+
+    font-size: 15vmin;
+
+    width: 100vw;
+    height: 70vh;
+
+    #time
+    {
+        align-self: center;
+        margin: 0 auto;
+    }
+
+}

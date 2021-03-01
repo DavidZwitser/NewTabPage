@@ -1,0 +1,32 @@
+#progressionBar-container
+{
+    display: flex;
+    height: 100vh;
+
+    #bar_base, #bar_progressionOverlay
+    {
+        background-color: rgb(99, 99, 99);
+
+        width: 60vmin;
+        height: .5vmin;
+
+        border-radius: 1vmin;
+
+        align-self: center;
+        margin: 0 auto;
+
+        // display: flex;
+    }
+
+    #bar_progressionOverlay
+    {
+        z-index: 1;
+        background-color: rgb(51, 202, 208);
+
+        margin: 0;
+
+        border-radius: 1vmin 0vw 0vw 1vmin;
+
+        transition: width 1s ease-in-out;
+    }
+}
