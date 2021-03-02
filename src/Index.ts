@@ -56,7 +56,9 @@ class Main
                     {place: markerPlaces[6], content: 'aug'}
                 ],
                 progression: currentPercent,
-                barWidth: 50
+                barWidth: 50,
+                fromDate: startDate,
+                nowDate: nowDate
             }),
             document.getElementById('bar-DOM-container')
         );

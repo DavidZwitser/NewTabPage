@@ -28,17 +28,32 @@
 
         border-radius: 1vmin 0vw 0vw 1vmin;
 
-        transition: width 1s ease-out;
+        transition: width;
+        transition-timing-function: ease-out;
+        transition-delay: .3s;
 
         height: $barHeight;
 
         align-self: center;
+
+        float: left;
+    }
+
+    #currentDate_marker
+    {
+        float: left;
+
+        width: 5vmin;
+        margin: 0;
+        margin-top: -2vmin;
+        margin-left: -2.5vmin;
     }
 
     #bar_base
     {
         #marker
         {
+            clear: left;
             
             position: fixed;
             float: left;
@@ -49,7 +64,7 @@
             height: $markerHeight;
 
             margin: 0;
-            margin-top: -$markerHeight * .5 - $barHeight * .5;
+            margin-top: -$markerHeight * .5 + $barHeight * .5;
 
             background-color: rgb(80, 80, 80);
 
