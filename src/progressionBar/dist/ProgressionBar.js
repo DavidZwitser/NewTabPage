@@ -21,7 +21,7 @@ var ProgressionBar = /** @class */ (function (_super) {
         _this.progressIsTransitioning = false;
         _this.timeTransitioning = 0;
         _this.lastTransitionTime = 0;
-        _this.loadTransitionDurationSeconds = 2;
+        _this.loadTransitionDurationSeconds = 1;
         _this.state = { progression: 0, transitionDate: _this.getWrittenDate(_this.props.fromDate) };
         setTimeout(function () {
             _this.setState({ progression: props.progression });
@@ -40,7 +40,7 @@ var ProgressionBar = /** @class */ (function (_super) {
         this.lastTransitionTime = currTransitionTime;
         this.timeTransitioning += transitionDelta;
         var fullDateRange = this.props.nowDate.getTime() - this.props.fromDate.getTime();
-        var transitionPercent = this.timeTransitioning / (this.loadTransitionDurationSeconds + 2000);
+        var transitionPercent = this.timeTransitioning / (this.loadTransitionDurationSeconds + 1000);
         var transitionRemapToPI = transitionPercent * (Math.PI / 2);
         var transitionToSin = Math.sin(transitionRemapToPI);
         var transitionDateLocal = fullDateRange * transitionToSin;

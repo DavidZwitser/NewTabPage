@@ -23,7 +23,7 @@ export default class ProgressionBar extends React.Component<ProgressionBarProps,
     private timeTransitioning: number = 0;
     private lastTransitionTime: number = 0;
 
-    private loadTransitionDurationSeconds: number = 2;
+    private loadTransitionDurationSeconds: number = 1;
 
     constructor(props: ProgressionBarProps) 
     {
@@ -52,7 +52,7 @@ export default class ProgressionBar extends React.Component<ProgressionBarProps,
 
         let fullDateRange: number = this.props.nowDate.getTime() - this.props.fromDate.getTime();
         
-        let transitionPercent: number = this.timeTransitioning / (this.loadTransitionDurationSeconds + 2000);
+        let transitionPercent: number = this.timeTransitioning / (this.loadTransitionDurationSeconds + 1000);
         let transitionRemapToPI: number = transitionPercent * (Math.PI / 2);
         let transitionToSin: number = Math.sin(transitionRemapToPI);
 
