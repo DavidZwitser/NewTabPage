@@ -19,7 +19,7 @@ export default class LoadFadein extends React.Component<LoadFadeinProps, LoadFad
 
         setTimeout(() => {
             this.setState({opacity: 0});
-        }, 100);
+        }, 5);
     }
 
     render()

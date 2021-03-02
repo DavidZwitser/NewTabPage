@@ -36,12 +36,27 @@ class Main
 
         let dateTillNow: number = nowDate.getTime() - startDate.getTime();
         let fullDateRange: number = endDate.getTime() - startDate.getTime();
+
         let currentPercent: number = dateTillNow / fullDateRange * 100;
-        
+        let markerPlaces: number[] = [];
+        for (let i = 0; i < 7; i++)
+        {
+            markerPlaces.push((new Date(2021, i + 1, 1).getTime() - startDate.getTime()) / fullDateRange * 100);
+        }
+
         ReactDom.render(
             React.createElement(ProgressionBar, <ProgressionBarProps>{
-                markers: [{place: 0, content: '20/1'}],
-                progression: currentPercent
+                markers: [
+                    {place: markerPlaces[0], content: 'feb'},
+                    {place: markerPlaces[1], content: 'ma'},
+                    {place: markerPlaces[2], content: 'apr'},
+                    {place: markerPlaces[3], content: 'mei'},
+                    {place: markerPlaces[4], content: 'jun'},
+                    {place: markerPlaces[5], content: 'jul'},
+                    {place: markerPlaces[6], content: 'aug'}
+                ],
+                progression: currentPercent,
+                barWidth: 50
             }),
             document.getElementById('bar-DOM-container')
         );

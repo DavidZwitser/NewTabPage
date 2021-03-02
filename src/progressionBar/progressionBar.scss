@@ -1,21 +1,22 @@
+
 #progressionBar-container
 {
     display: flex;
     height: 100vh;
 
-    #bar_base, #bar_progressionOverlay
-    {
-        background-color: rgb(99, 99, 99);
+    $barHeight: .5vmin;
 
-        width: 60vmin;
-        height: .5vmin;
+    #bar_base
+    {
+        background-color: rgb(80, 80, 80);
+
+        height: $barHeight;
 
         border-radius: 1vmin;
 
         align-self: center;
         margin: 0 auto;
-
-        // display: flex;
+        margin-top: 10vh;
     }
 
     #bar_progressionOverlay
@@ -27,6 +28,36 @@
 
         border-radius: 1vmin 0vw 0vw 1vmin;
 
-        transition: width 1s ease-in-out;
+        transition: width 1s ease-out;
+
+        height: $barHeight;
+
+        align-self: center;
     }
+
+    #bar_base
+    {
+        #marker
+        {
+            
+            position: fixed;
+            float: left;
+            z-index: 1;
+            
+            $markerHeight: 1vmin;
+            width: .18vmin;
+            height: $markerHeight;
+
+            margin: 0;
+            margin-top: -$markerHeight * .5 - $barHeight * .5;
+
+            background-color: rgb(80, 80, 80);
+
+            #label
+            {
+                font-size: 1vmin;
+            }
+        }
+    }
+
 }
