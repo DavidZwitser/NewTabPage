@@ -33,13 +33,13 @@ export default class ProgressionBar extends React.Component<ProgressionBarProps,
         setTimeout(() => {
             this.setState({progression: props.progression});
 
-            document.getElementById('bar_progressionOverlay').addEventListener('transitionstart', (ev: TransitionEvent) => {
+            document.getElementById('progression_bar__fill').addEventListener('transitionstart', (ev: TransitionEvent) => {
                 this.progressIsTransitioning = true
                 this.lastTransitionTime = new Date().getTime();
                 this.animateCurrentDateMarker();
             });
 
-            document.getElementById('bar_progressionOverlay').addEventListener('transitionend', () => this.progressIsTransitioning = false);
+            document.getElementById('progression_bar__fill').addEventListener('transitionend', () => this.progressIsTransitioning = false);
         }, 200);
     }
 
@@ -86,8 +86,8 @@ export default class ProgressionBar extends React.Component<ProgressionBarProps,
         for (let i = 0; i < this.props.markers.length; i++)
         {
             elements.push(
-                <div id = 'marker' style = {{marginLeft: this.props.markers[i].place * (this.props.barWidth / 100) + 'vmin'}} key = {'marker' + i}>
-                    <p id = 'label'>{this.props.markers[i].content}</p>
+                <div id = 'progression_bar__marker' style = {{marginLeft: this.props.markers[i].place * (this.props.barWidth / 100) + 'vmin'}} key = {'marker' + i}>
+                    <p id = 'progression_bar__label'>{this.props.markers[i].content}</p>
                 </div>
             );
         }
@@ -107,11 +107,11 @@ export default class ProgressionBar extends React.Component<ProgressionBarProps,
     render()
     {
         return(
-            <div id = "progressionBar-container">
-                <div id = 'bar_base' style = {{width: this.props.barWidth + 'vmin'}}>
+            <div id = "progression_bar">
+                <div id = 'progression_bar__base' style = {{width: this.props.barWidth + 'vmin'}}>
 
-                    <div id = 'bar_progressionOverlay' style = {{width: this.state.progression + '%', transitionDuration: this.loadTransitionDurationSeconds + 's'}}></div>
-                    <p id = 'currentDate_marker'>{this.state.transitionDate}</p>
+                    <div id = 'progression_bar__fill' style = {{width: this.state.progression + '%', transitionDuration: this.loadTransitionDurationSeconds + 's'}}></div>
+                    <p id = 'progression_bar__date'>{this.state.transitionDate}</p>
                     {this.createMarkers()}
 
                 </div>

@@ -1,0 +1,59 @@
+$timeCircleSize: 25vmin
+
+#day_progression
+
+    // height: 100vh
+    display: flex
+
+    top: 20vh
+    width: 100vw
+
+    &__circle
+
+        position: absolute
+        display: flex
+
+        top: 20vh
+        width: 100vw
+
+        &__svg
+
+            width: $timeCircleSize
+            height: $timeCircleSize
+
+            align-self: center
+            margin: 0 auto
+
+            transform: rotate(-90deg)
+            background: rgba(153, 205, 50, 0)
+            border-radius: 50%
+
+            &__cover
+
+                fill: rgb(23, 141, 135)
+
+                stroke: rgb(255, 255, 255)
+                stroke-width: 32
+                stroke-dasharray: 30 100
+
+            &__cutout
+
+                fill: white
+
+    &__label
+
+        position: absolute
+        display: flex
+
+        top: 20vh
+        width: 100vw
+
+        &__time, &__percent
+
+            align-self: center
+            margin: 0 auto
+
+            margin-top: 8vh
+
+            font-size: 8vmin
+            color: black

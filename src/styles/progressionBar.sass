@@ -1,0 +1,64 @@
+
+#progression_bar
+    display: flex
+    height: 100vh
+
+    $barHeight: .5vmin
+
+    &__base
+        background-color: rgb(80, 80, 80)
+
+        height: $barHeight
+
+        border-radius: 1vmin
+
+        align-self: center
+        margin: 0 auto
+        margin-top: 10vh
+
+    &__fill
+        z-index: 1
+        background-color: rgb(51, 202, 208)
+
+        margin: 0
+
+        border-radius: 1vmin 0vw 0vw 1vmin
+
+        transition: width
+        transition-timing-function: ease-out
+        // transition-delay: .2s 
+
+        height: $barHeight
+
+        align-self: center
+
+        float: left
+
+    &__date
+        float: left
+
+        width: 5vmin
+        margin: 0
+        margin-top: -2vmin
+        margin-left: -2.5vmin
+
+        font-size: 1.2vmin
+
+    &__marker
+        clear: left
+
+        position: fixed
+        float: left
+        z-index: 1
+
+        $markerHeight: 1vmin
+        width: .18vmin
+        height: $markerHeight
+
+        margin: 0
+        margin-top: -$markerHeight * .5 + $barHeight * .5
+
+        background-color: rgb(80, 80, 80)
+
+        &__label
+            font-size: 1vmin
