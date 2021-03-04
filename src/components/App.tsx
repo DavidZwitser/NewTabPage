@@ -1,7 +1,7 @@
 import React from 'react';
 import LoadFadeIn from './LoadFadeIn';
 import ProgressionBar from './ProgressionBar';
-import DayProgressionCircle from './DayProgressionCircle';
+import DayProgression from './DayProgression';
 
 const App: React.FC = () => {
 
@@ -41,7 +41,7 @@ const App: React.FC = () => {
             nowDate = {nowDate}
             />
 
-            <DayProgressionCircle />
+            <DayProgression />
 
         </div>
     )
