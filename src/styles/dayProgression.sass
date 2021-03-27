@@ -20,14 +20,21 @@
             align-self: center
             margin: 0 auto
 
+            z-index: 1
 
-            color: black
+            color: $primary_highlight--darker
+            mix-blend-mode: difference
+        
+        &__time::after
+
 
     &__full_page
         position: absolute
 
         top: 0
         left: 0
+
+        z-index: 0
 
         height: 100vh
         background-color: $primary_highlight--darker
